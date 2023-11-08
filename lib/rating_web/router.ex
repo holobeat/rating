@@ -17,8 +17,9 @@ defmodule RatingWeb.Router do
   scope "/", RatingWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
-		live "/rating", RatingLive
+    # get "/", PageController, :home
+    live "/", RatingLive
+    live "/rating", RatingLive
     live "/rating-list", RatingListLive
   end
 

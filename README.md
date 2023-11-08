@@ -1,18 +1,25 @@
-# Rating
+# Ratings component
 
-To start your Phoenix server:
+Modelled after Amazon's star rating, with half star accuracy.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+Start with `mix setup`, then run `mix phoenix.server` to start the web server.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Open web browser with url `localhost:4000`
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+**Usage:**
 
-## Learn more
+```elixir
+# Readonly
+<.rating value={3.5} max={5} class="w-4 h-4" />
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+# Read/write
+<.rating
+    id="rating"
+    value={@rating}
+    max={5}
+    class="cursor-pointer w-5 h-5"
+    phx-click="rating-click"
+/>
+```
+
+![rating image](rating-1.png) ![rating image](rating-2.png)
